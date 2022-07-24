@@ -1,5 +1,6 @@
 # host discover
-`etdiscover -r 192.168.111.0/24`
+-r means range
+`netdiscover -r 192.168.111.0/24`
 
 # port scan
 `nmap -p- 192.168.111.130 -A `
