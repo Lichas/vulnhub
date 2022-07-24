@@ -1,2 +1,2 @@
 # vulnhub
-vulnhub writehub
+vulnhub writeup
